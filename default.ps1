@@ -11,7 +11,7 @@ properties {
 	$nuget_path = "$base_directory\nuget.exe"
 
 	$buildNumber = 0;
-	$version = "2.6.0.0"
+	$version = "2.6.1.0"
 	$preRelease = $null
 }
 
@@ -86,7 +86,7 @@ task CreateNuGetPackage -depends ILMerge {
 	if($preRelease){
 		$packageVersion = "$packageVersion-$preRelease"
 	}
-	
+
 	if ($buildNumber -ne 0){
 		$packageVersion = $packageVersion + "-build" + $buildNumber.ToString().PadLeft(5,'0')
 	}
